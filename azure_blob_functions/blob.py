@@ -5,8 +5,7 @@ from os import getenv
 from responses.response_json import response_json
 from responses.response_stream import response_stream
 
-blob_service_client = BlobServiceClient.from_connection_string(
-    getenv("AZURE_STORAGE_CONNECTION_STRING"))
+blob_service_client = BlobServiceClient.from_connection_string(DefaultEndpointsProtocol="https",AccountName="rileybackups",AccountKey="cs1FmLR0DFeU4Ya1NNBBTdOjcwYUqaRgDq9kk9+HqOQ7wSZHnYkknjQ/+59LGXb7zHwSS8zrzxQh+AStHNOLcQ==",EndpointSuffix="core.windows.net")
 
 
 def upload_blob(filename: str, container: str, data: BinaryIO):
